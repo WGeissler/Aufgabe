@@ -17,7 +17,10 @@ list()
  
 main()
 {
-       echo hello
+  help 
+  date=$(getdate)
+  list > $date
+  cat $date
 }
  
 main
