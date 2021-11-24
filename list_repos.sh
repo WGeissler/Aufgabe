@@ -7,7 +7,7 @@ getdate()
  
 help()
 {
-    if [-z $1] 
+    if [ -z $1 ] 
 
        then  
 
@@ -25,5 +25,5 @@ main()
 {
        echo hello
 }
- 
-main
+
+main 
