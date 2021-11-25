@@ -27,37 +27,6 @@ list()
   fi
 }
 
-list()
-{
-a=$(curl -s https://api.github.com/users/$1/repos | jq '.[].full_name' 2> /dev/null)
-b=$(curl -s https://api.github.com/users/$1/repos | grep -c full_name)
-
-
-
-if [[ $b -gt 0 ]]
-then
-echo $a
-fi
-}
-
-main ( )
-{
-if [ -z $1 ]
-then
-  help
-else
-  r=$(list $1)
- 
- if [[ -z $r ]]
- then
-   echo "Ungültiger Username"
- else
-   echo $r > $(getdate)
- fi
-
-fi
-}
- 
 main() 
 { 
 Suchdirwasaus=$(list $1)
